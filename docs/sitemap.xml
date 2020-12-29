@@ -18,6 +18,16 @@
   </url>
   
   <url>
+    <loc>http://cjsmith.io/community/popl20aec/</loc>
+    <lastmod>2020-01-01T00:00:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/community/</loc>
+    <lastmod>2020-01-01T00:00:00-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cjsmith.io/papers/icfp19/</loc>
     <lastmod>2019-08-18T00:00:00-05:00</lastmod>
   </url>
@@ -34,11 +44,6 @@
   
   <url>
     <loc>http://cjsmith.io/community/cav19aec/</loc>
-    <lastmod>2019-07-14T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cjsmith.io/community/</loc>
     <lastmod>2019-07-14T00:00:00-05:00</lastmod>
   </url>
   

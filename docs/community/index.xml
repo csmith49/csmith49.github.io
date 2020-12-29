@@ -6,7 +6,16 @@
     <description>Recent content in Communities on Calvin Smith</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Jul 2019 00:00:00 -0500</lastBuildDate><atom:link href="http://cjsmith.io/community/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 -0600</lastBuildDate><atom:link href="http://cjsmith.io/community/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://cjsmith.io/community/popl20aec/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 -0600</pubDate>
+      
+      <guid>http://cjsmith.io/community/popl20aec/</guid>
+      <description>I served on the POPL 2020 Artifact Evaluation Committee.</description>
+    </item>
+    
     <item>
       <title></title>
       <link>http://cjsmith.io/community/cav19aec/</link>
