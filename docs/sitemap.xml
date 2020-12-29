@@ -4,6 +4,67 @@
   
   <url>
     <loc>http://cjsmith.io/</loc>
+    <lastmod>2020-03-23T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/papers/icml20/</loc>
+    <lastmod>2020-03-23T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/papers/</loc>
+    <lastmod>2020-03-23T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/papers/icfp19/</loc>
+    <lastmod>2019-08-18T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/workshops/synt19/</loc>
+    <lastmod>2019-08-14T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/workshops/</loc>
+    <lastmod>2019-08-14T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/community/cav19aec/</loc>
+    <lastmod>2019-07-14T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/community/</loc>
+    <lastmod>2019-07-14T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/papers/popl19/</loc>
+    <lastmod>2019-01-14T00:00:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/papers/vmcai19/</loc>
+    <lastmod>2019-01-11T00:00:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/papers/fse17/</loc>
+    <lastmod>2017-09-04T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/papers/cp17/</loc>
+    <lastmod>2017-08-23T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cjsmith.io/papers/pldi16/</loc>
+    <lastmod>2016-06-13T00:00:00-05:00</lastmod>
   </url>
   
   <url>

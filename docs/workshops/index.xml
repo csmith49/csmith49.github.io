@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workshops on Calvin Smith</title>
+    <link>http://cjsmith.io/workshops/</link>
+    <description>Recent content in Workshops on Calvin Smith</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 -0500</lastBuildDate><atom:link href="http://cjsmith.io/workshops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Synthesis for Differential Privacy</title>
+      <link>http://cjsmith.io/workshops/synt19/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 -0500</pubDate>
+      
+      <guid>http://cjsmith.io/workshops/synt19/</guid>
+      <description>Data analysis has the capability to enrich the lives of many, yet it presents a fundamental threat to individual privacy. Formal privacy constraints such as differential privacy serve to protect individual rights while allowing large-scale data analytics to proceed relatively unhindered. However, such constraints are a significant barrier to the access of relevant data. In this abstract, we give a solution that leverages type-directed synthesis and the privacy-aware type system DFuzz to allow users to automatically and efficiently synthesize programs that respect privacy constraints.</description>
+    </item>
+    
+  </channel>
+</rss>

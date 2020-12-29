@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Proza+Libre|Fira+Sans|Raleway");
+#workshops .location, #workshops .at, #publications .authors, #publications .location, #publications .at {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  flex-grow: row;
+  justify-content: space-between;
+}
+.header .headshot img {
+  width: 100px;
+  border-radius: 50px;
+  border: 1px #dadfe1 solid;
+}
+.header .contact {
+  margin-left: 10px;
+}
+.header h1 {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: lighter;
+}
+.header h1:before {
+  content: "# ";
+  color: #c5050c;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  font-family: "Raleway", sans-serif;
+  color: #494949;
+}
+
+.navbar {
+  display: none;
+}
+
+.content a {
+  text-decoration: none;
+  color: #c5050c;
+}
+.content a:hover {
+  text-decoration: underline;
+}
+.content p {
+  margin-left: 10px;
+}
+.content h2 {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: lighter;
+}
+.content h2:before {
+  content: "## ";
+  color: #c5050c;
+}
+
+#about a {
+  text-decoration: none;
+  color: #c5050c;
+}
+#about a:hover {
+  text-decoration: underline;
+}
+
+#publications ul {
+  padding-left: 0px;
+  margin-left: 10px;
+  list-style-type: none;
+}
+#publications ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+#publications .title a {
+  text-decoration: none;
+  color: #c5050c;
+}
+#publications .title a:hover {
+  text-decoration: underline;
+}
+#publications .awards {
+  font-weight: lighter;
+}
+#publications .resources a:not(:last-child):after {
+  content: " | ";
+  color: #494949;
+}
+
+#workshops ul {
+  padding-left: 0px;
+  margin-left: 10px;
+  list-style-type: none;
+}
+#workshops ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+#workshops .title a {
+  text-decoration: none;
+  color: #c5050c;
+}
+#workshops .title a:hover {
+  text-decoration: underline;
+}
+#community a {
+  text-decoration: none;
+  color: #c5050c;
+}
+#community a:hover {
+  text-decoration: underline;
+}
+#community ul {
+  padding-left: 0px;
+  margin-left: 10px;
+  list-style-type: none;
+}
+#community ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+#community .community_year {
+  color: #c5050c;
+}
+#community .event:not(:last-child):after {
+  content: " | ";
+}
+
+/*# sourceMappingURL=style.css.map */

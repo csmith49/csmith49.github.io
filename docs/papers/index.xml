@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Calvin Smith</title>
-    <link>http://cjsmith.io/</link>
-    <description>Recent content on Calvin Smith</description>
+    <title>Papers on Calvin Smith</title>
+    <link>http://cjsmith.io/papers/</link>
+    <description>Recent content in Papers on Calvin Smith</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2020 00:00:00 -0500</lastBuildDate><atom:link href="http://cjsmith.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Mar 2020 00:00:00 -0500</lastBuildDate><atom:link href="http://cjsmith.io/papers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generating Programmatic Referring Expressions via Program Synthesis</title>
       <link>http://cjsmith.io/papers/icml20/</link>
@@ -24,24 +24,6 @@
       <guid>http://cjsmith.io/papers/icfp19/</guid>
       <description>Inspired by the proliferation of data-analysis tasks, recent research in program synthesis has had a strong focus on enabling users to specify data-analysis programs through intuitive specifications, like examples and natural language. However, with the ever-increasing threat to privacy through data analysis, we believe it is imperative to reimagine program synthesis technology in the presence of formal privacy constraints.
 In this paper, we study the problem of automatically synthesizing randomized, differentially private programs, where the user can provide the synthesizer with a constraint on the privacy of the desired algorithm.</description>
-    </item>
-    
-    <item>
-      <title>On Synthesis for Differential Privacy</title>
-      <link>http://cjsmith.io/workshops/synt19/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 -0500</pubDate>
-      
-      <guid>http://cjsmith.io/workshops/synt19/</guid>
-      <description>Data analysis has the capability to enrich the lives of many, yet it presents a fundamental threat to individual privacy. Formal privacy constraints such as differential privacy serve to protect individual rights while allowing large-scale data analytics to proceed relatively unhindered. However, such constraints are a significant barrier to the access of relevant data. In this abstract, we give a solution that leverages type-directed synthesis and the privacy-aware type system DFuzz to allow users to automatically and efficiently synthesize programs that respect privacy constraints.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://cjsmith.io/community/cav19aec/</link>
-      <pubDate>Sun, 14 Jul 2019 00:00:00 -0500</pubDate>
-      
-      <guid>http://cjsmith.io/community/cav19aec/</guid>
-      <description>I served on the CAV 2019 Artifact Evaluation Committee.</description>
     </item>
     
     <item>
