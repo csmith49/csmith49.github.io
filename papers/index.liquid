@@ -1,0 +1,28 @@
+---
+title: Papers
+layout: layouts/base
+---
+
+<h1>Publications</h1>
+
+<ul>{% for paper in papers %}
+    {% if paper.type == "conference" or paper.type == "journal" %}
+    <li>{% include papers/card with paper as paper %}</li>
+    {% endif %}
+{% endfor %}</ul>
+
+<h2 id="workshops">Workshops</h2>
+
+<ul>{% for paper in papers %}
+    {% if paper.type == "workshop" %}
+    <li>{% include papers/card with paper as paper %}</li>
+    {% endif %}
+{% endfor %}</ul>
+
+<h2 id="thesis">Thesis</h2>
+
+<ul>{% for paper in papers %}
+    {% if paper.type == "thesis" %}
+    <li>{% include papers/card with paper as paper %}</li>
+    {% endif %}
+{% endfor %}</ul>

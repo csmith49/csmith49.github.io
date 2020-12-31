@@ -1,0 +1,27 @@
+---
+layout: layouts/base
+---
+
+{{ content }}
+
+<h2>Selected Publications [<a href="/papers">all</a>]</h2>
+
+<ul>{% for paper in papers reversed %}
+    {% if paper.selected %}
+    <li>{% include papers/card with paper as paper %}</li>
+    {% endif %}
+{% endfor %}</ul>
+
+<h2>Community</h2>
+
+<ul>{% for year in community %}
+    <li>{{ year.year }}
+        <ul>{% for entry in year.entries %}
+            <li>{{ entry.role }}
+                {% if entry.notes %}<ul>{% for note in entry.notes %}
+                    <li>{{ note }}</li>
+                {% endfor %}</ul>{% endif %}
+            </li>
+        {% endfor %}</ul>
+    </li>
+{% endfor %}</ul>

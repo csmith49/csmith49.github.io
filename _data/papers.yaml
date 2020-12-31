@@ -1,0 +1,137 @@
+- title: MapReduce Program Synthesis
+  authors:
+    - Calvin Smith
+    - Aws Albarghouthi
+  location: PLDI
+  year: 2016
+  type: conference
+  link: https://dl.acm.org/doi/10.1145/2908080.2908102
+  notes: []
+  keywords:
+    - program synthesis
+    - mapreduce
+    - commutative semigroup
+    - verification
+
+- title: Discovering Relational Specifications
+  authors:
+    - Calvin Smith
+    - Gabriel Ferns
+    - Aws Albarghouthi
+  location: FSE
+  year: 2017
+  type: conference
+  link: https://dl.acm.org/doi/abs/10.1145/3106237.3106279
+  notes:
+    - Best Paper Award
+  keywords:
+    - relational specifications
+    - specification
+    - logic programming
+    - program synthesis
+  selected: true
+
+- title: Constraint-Based Synthesis of Datalog Programs
+  authors:
+    - Aws Albarghouthi
+    - Paris Koutris
+    - Mayur Naik
+    - Calvin Smith
+  location: CP
+  year: 2017
+  type: conference
+  link: https://link.springer.com/chapter/10.1007/978-3-319-66158-2_44
+  notes: []
+  keywords:
+    - datalog
+    - constraint-based synthesis
+    - higher-order templates
+
+- title: Trace Abstraction Modulo Probability
+  authors:
+    - Calvin Smith
+    - Justin Hsu
+    - Aws Albarghouthi
+  location: POPL
+  year: 2019
+  type: conference
+  link: https://dl.acm.org/doi/10.1145/3290352
+  notes: []
+  keywords:
+    - trace abstraction
+    - differential privacy
+    - union bound
+    - verification
+  selected: true
+
+- title: Program Synthesis with Equivalence Reduction
+  authors:
+    - Calvin Smith
+    - Aws Albarghouthi
+  location: VMCAI
+  year: 2019
+  type: conference
+  link: https://par.nsf.gov/servlets/purl/10100598
+  notes: []
+  keywords:
+    - program synthesis
+    - term rewriting
+    - equivalence reduction
+  selected: true
+
+- title: On Synthesis for Differential Privacy
+  authors: Calvin Smith
+  location: SYNT
+  year: 2019
+  type: workshop
+  link: https://cs.nyu.edu/acsys/synt2019/abstracts/paper%203.pdf
+  notes: []
+  keywords:
+    - program synthesis
+    - differential privacy
+
+- title: Synthesizing Differentially Private Programs
+  authors:
+    - Calvin Smith
+    - Aws Albarghouthi
+  location: ICFP
+  year: 2019
+  type: conference
+  link: https://dl.acm.org/doi/10.1145/3341698
+  notes: []
+  keywords:
+    - program synthesis
+    - differential privacy
+    - dfuzz
+  selected: true
+
+- title: Generating Programmatic Referring Expressions via Program Synthesis
+  authors:
+    - Jiani Huang
+    - Calvin Smith
+    - Osbert Bastani
+    - Rishabh Singh
+    - Aws Albarghouthi
+    - Mayur Naik
+  location: ICML
+  year: 2020
+  type: conference
+  link: https://www.cis.upenn.edu/~mhnaik/papers/icml20.pdf
+  notes: []
+  keywords:
+    - program synthesis
+    - horn clause
+    - computer vision
+
+- title: "Program Synthesis for Data Analysis: Scalability and Privacy"
+  authors: Calvin Smith
+  location:
+  year: 2020
+  type: thesis
+  link: /pdfs/thesis.pdf
+  notes: []
+  keywords:
+    - program synthesis
+    - differential privacy
+    - mapreduce
+    - equivalence reduction

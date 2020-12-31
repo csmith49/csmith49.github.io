@@ -1,0 +1,18 @@
+- name: about
+  url: /about
+
+- name: projects
+  url: /projects
+
+- name: papers
+  url: /papers
+  sub:
+    - name: refereed
+      url: /papers#refereed
+    - name: thesis
+      url: /papers#thesis
+    - name: workshop
+      url: /papers#workshop
+
+- name: blog
+  url: /posts
