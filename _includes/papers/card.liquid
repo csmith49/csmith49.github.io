@@ -2,11 +2,11 @@
     <div class="location">{% if paper.location %}{{ paper.location }} {% endif %}{{ paper.year }}</div>
     <div class="body">
         <a class="title" href={{ paper.link }}>{{ paper.title }}</a>
-        <ul class="authors">{% for author in paper.authors %}
-            <li class="author">{{ author }}</li>
-        {% endfor %}</ul>
-        <ul class="notes">{% for note in paper.notes %}
-            <li class="note">{{ note }}</li>
-        {% endfor %}</ul>
+        <div class="authors">{% for author in paper.authors %}
+            <div class="author">{{ author }}</div>
+        {% endfor %}</div>
+        <div class="notes">{% for note in paper.notes %}
+            <div class="note">{{ note }}</div>
+        {% endfor %}</div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="navigation">
     <a class="name" href="/">{{ about.name }}</a>
-    <nav>{%- for entry in navigation %}
+    <nav class="nav-items">{%- for entry in navigation %}
         <a href={{ entry.url }}>{{ entry.name }}</a>
     {% endfor %}</nav>
 </div>
