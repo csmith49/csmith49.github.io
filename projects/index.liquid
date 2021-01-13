@@ -1,0 +1,10 @@
+---
+title: Projects
+layout: layouts/base
+---
+
+<h1>Projects</h1>
+
+<ul>{% for project in collections.projects %}
+    <li>{% include projects/card with project as project %}</li>
+{% endfor %}</ul>

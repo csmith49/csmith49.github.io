@@ -1,5 +1,0 @@
-baseURL = "http://cjsmith.io"
-languageCode = "en-us"
-title = "Calvin Smith"
-publishdir = "docs"
-theme = "south-st"
