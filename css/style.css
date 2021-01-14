@@ -36,135 +36,74 @@
 
     /* primary fonts */
     --body-font: "Darker Grotesque";
-    --header-font: "Staatliches"
+    --header-font: "Staatliches";
+
+    /* spacing */
+    --sidebar-width: 200px;
+    --content-width: 600px;
+    --footer-height: 30px;
+    --spacing: 20px;
 }
 
-/* and some common formatting */
+/* grid layout */
 
 body {
-    font-family: var(--body-font);
-}
-
-h1, h2, h3 {
-    font-family: var(--header-font);
-}
-
-/* links */
-a {
-    color: var(--font-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--accent-color);
-}
-
-/* lists */
-ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-}
-
-li {
-    margin-top: 10px;
-}
-
-/* headers */
-
-/* fonts */
-
-/* stick the footer to the bottom of the page when there's more content than can fit in the viewport */
-html, body {
     height: 100%;
-    max-width: 600px;
-    margin: auto;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr var(--sidebar-width) auto 1fr;
+    grid-template-rows: auto var(--footer-height);
+    grid-template-areas: 
+        "left sidebar content right"
+        "left sidebar footer right";
+    gap: var(--spacing);
 }
 
 .content {
-    flex: 1 0 auto;
-    padding: 10px;
+    max-width: var(--content-width);
+    grid-area: content;
 }
 
 .footer {
-    flex-shrink: 0;
+    grid-area: footer;
 }
 
-/* styling the footer */
-.footer {
-    padding: 10px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.footer > div {
-    margin: 20px 20px 0px 0px;
-}
-
-.footer a {
-    color: var(--font-color);
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: var(--accent-color);
-}
-
-/* styling the navigation header */
 .navigation {
-    padding: 10px;
+    grid-area: sidebar;
+}
+
+/* laying out the nav block */
+
+.navigation {
     display: flex;
-    flex-shrink: 0;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-direction: column;
     align-items: flex-end;
-    border-bottom-style: solid;
-    border-width: 1px;
-    border-color: var(--accent-color);
 }
 
-.navigation a {
-    text-decoration: none;
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: var(--spacing);
 }
 
-.navigation .name {
-    color: var(--font-color);
-    font-family: var(--header-font);
-    font-size: 40px;
-    flex: 0 0 auto;
+/* laying out the content */
+.content p, .content h2, .content h3 {
+    margin-top: 0;
 }
 
-.navigation .nav-items {
-    flex: 1 0 auto;
+/* laying out the footer */
+.footer {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin-bottom: 5px;
+    justify-content: center; 
+    flex-wrap: wrap-reverse;
 }
 
-.navigation .nav-items a {
-    color: var(--font-color);
-    margin-right: 10px;
+.footer > *:not(:first-child)  {
+    margin-left: var(--spacing);
 }
 
-.navigation .nav-items a:hover {
-    color: var(--accent-color);
-}
-
-/* styling paper cards */
-.papers-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
+/* laying out the paper cards */
 .paper-card {
     display: flex;
     flex-direction: row;
@@ -172,36 +111,52 @@ body {
 }
 
 .paper-card .location {
-    color: var(--accent-color);
-    font-family: var(--header-font);
     width: 100px;
-    margin-right: 10px;
     text-align: right;
     flex-shrink: 0;
-}
-
-.paper-card .title {
-    color: var(--font-color);
-    font-family: var(--header-font);
-    text-decoration: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.paper-card .title:hover {
-    color: var(--accent-color);
+    margin-right: 10px;
 }
 
 .paper-card .authors, .paper-card .notes {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-top: 5px;
+    flex-wrap: wrap;
 }
 
-.paper-card .authors .author, .paper-card .notes .note {
+.author:not(:last-child) {
     margin-right: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
+ul.papers {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: var(--spacing);
+}
+
+.papers li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+/* laying out project cards */
+
+.project-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-card .title {
+    margin-right: 10px;
+}
+
+ul.projects {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: var(--spacing);
+}
+
+.projects li:not(:last-child) {
+    margin-bottom: 10px;
+}

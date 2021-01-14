@@ -3,9 +3,9 @@ title: Papers
 layout: layouts/base
 ---
 
-<h1>Publications</h1>
+<h2>Refereed Publications</h2>
 
-<ul>{% for paper in papers %}
+<ul class="papers">{% for paper in papers %}
     {% if paper.type == "conference" or paper.type == "journal" %}
     <li>{% include papers/card with paper as paper %}</li>
     {% endif %}
@@ -13,7 +13,7 @@ layout: layouts/base
 
 <h2>Workshops</h2>
 
-<ul>{% for paper in papers %}
+<ul class="papers">{% for paper in papers %}
     {% if paper.type == "workshop" %}
     <li>{% include papers/card with paper as paper %}</li>
     {% endif %}
@@ -21,7 +21,7 @@ layout: layouts/base
 
 <h2>Thesis</h2>
 
-<ul>{% for paper in papers %}
+<ul class="papers">{% for paper in papers %}
     {% if paper.type == "thesis" %}
     <li>{% include papers/card with paper as paper %}</li>
     {% endif %}

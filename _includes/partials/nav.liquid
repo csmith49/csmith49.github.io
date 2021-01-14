@@ -1,6 +1,9 @@
 <div class="navigation">
-    <a class="name" href="/">{{ about.name }}</a>
+    <div class="name">{{ about.name }}</div>
+    <div class="email">{{ about.email }}</div>
+    <div class="role">{{ about.role }}</div>
+    <div class="affiliation">{{ about.affiliation }}</div>
     <nav class="nav-items">{%- for entry in navigation %}
-        <a href={{ entry.url }}>{{ entry.name }}</a>
+        <a class="nav-item" href={{ entry.url }}>{{ entry.name }}</a>
     {% endfor %}</nav>
 </div>
