@@ -1,32 +1,4 @@
-@font-face {
-    font-family: "Lato";
-    src: url("/css/fonts/Lato-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Staatliches";
-    src: url("/css/fonts/Staatliches-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Darker Grotesque";
-    src: url("/css/fonts/DarkerGrotesque-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Didact Gothic";
-    src: url("/css/fonts/DidactGothic-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Economica";
-    src: url("/css/fonts/Economica-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Spectral";
-    src: url("/css/fonts/Spectral-Regular.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* defining some common colors and fonts */
 :root {
@@ -35,8 +7,8 @@
     --accent-color: red;
 
     /* primary fonts */
-    --body-font: "Darker Grotesque";
-    --header-font: "Staatliches";
+    --body-font: 'IBM Plex Serif';
+    --header-font: 'IBM Plex Serif';
 
     /* spacing */
     --sidebar-width: 200px;
@@ -60,6 +32,7 @@ body {
 
 .content {
     max-width: var(--content-width);
+    width: 100%;
     grid-area: content;
 }
 
@@ -74,22 +47,25 @@ body {
 /* laying out the nav block */
 
 .navigation {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
+.navigation .name {
+    margin-bottom: var(--spacing);
+}
 .nav-items {
-    display: flex;
+   display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-top: var(--spacing);
 }
 
 /* laying out the content */
-.content p, .content h2, .content h3 {
-    margin-top: 0;
-}
+.content { margin-top: 10px; }
+.content > *:first-child { margin-top: 0px; }
 
 /* laying out the footer */
 .footer {
@@ -159,4 +135,86 @@ ul.projects {
 
 .projects li:not(:last-child) {
     margin-bottom: 10px;
+}
+
+/* general styling */
+
+html {
+    font-family: var(--body-font);
+}
+
+/* headers */
+h1, h2, h3 {
+    font-family: var(--header-font);
+    margin-top: 0px;
+    font-weight: normal;
+    font-family: var(--header-font);
+}
+
+h1 {
+    font-size: 1.953em;
+    text-align: right;
+}
+h2 { font-size: 1.563em; }
+h3 { font-size: 1.250em; }
+
+/* navigation */
+.navigation .name {
+    font-size: 1.953em;
+}
+
+/* generic link styling */
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+a:hover {
+    filter: brightness(80%);
+}
+
+/* paper cards */
+.paper-card .author {
+    font-style: italic;
+}
+.paper-card .note {
+    font-weight: bold;
+}
+
+/* project cards */
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+.project-card .title {
+    font-size: 1.25em;
+}
+.project-card .summary {
+    font-style: italic;
+}
+
+.keywords {
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+.keywords .keyword:not(:first-child) {
+    margin-left: var(--spacing);
+}
+
+.keywords .keyword:before {
+    content: "#";
+}
+
+.keywords .keyword {
+    font-size: 0.75em;
+    border-radius: 15px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    color: white;
+    background-color: var(--accent-color);
 }

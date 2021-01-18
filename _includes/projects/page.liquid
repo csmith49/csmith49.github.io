@@ -2,11 +2,8 @@
 layout: layouts/base
 ---
 
-<h1>{{ title }}</h1>
-<div>{{ summary }}</div>
-
-<ul>{% for keyword in keywords %}
-    <li>{{ keyword }}</li>
+<ul class="keywords">{%- for keyword in keywords -%}
+    <li class="keyword">{{ keyword }}</li>
 {% endfor %}</ul>
 
 {{ content }}

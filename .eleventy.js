@@ -8,4 +8,18 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("files/images");
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("files/pdfs");
+
+    eleventyConfig.addFilter("abbreviateName", function (name) {
+        var splits = name.trim().split(" ");
+        result = "";
+        for (i = 0; i < splits.length; i++) {
+            if (i != splits.length - 1) {
+                result += splits[i].charAt(0) + ". ";
+            }
+            else {
+                result += splits[i];   
+            }
+        }
+        return result;
+    });
 };
