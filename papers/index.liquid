@@ -3,26 +3,21 @@ title: Papers
 layout: layouts/base
 ---
 
-<h1>Publications</h1>
+<h2>Publications</h2>
 
-<ul>{% for paper in papers %}
+<ul class="papers">{%- for paper in papers reversed -%}
     {% if paper.type == "conference" or paper.type == "journal" %}
     <li>{% include papers/card with paper as paper %}</li>
     {% endif %}
 {% endfor %}</ul>
-
 <h2>Workshops</h2>
 
-<ul>{% for paper in papers %}
+<ul class="papers">{%- for paper in papers reversed -%}
     {% if paper.type == "workshop" %}
     <li>{% include papers/card with paper as paper %}</li>
     {% endif %}
 {% endfor %}</ul>
 
-<h2>Thesis</h2>
+<p>My <a href="/files/pdfs/thesis.pdf">thesis</a> explores program synthesis techniques for data access.</p>
 
-<ul>{% for paper in papers %}
-    {% if paper.type == "thesis" %}
-    <li>{% include papers/card with paper as paper %}</li>
-    {% endif %}
-{% endfor %}</ul>
+<p>If you lack institutional access to any of the works above, feel free to contact me directly for a pre-print.</p>

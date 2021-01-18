@@ -1,5 +1,5 @@
-- name: about
-  url: /about
+- name: home
+  url: /
 
 - name: projects
   url: /projects

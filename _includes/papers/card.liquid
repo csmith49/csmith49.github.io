@@ -3,7 +3,7 @@
     <div class="body">
         <a class="title" href={{ paper.link }}>{{ paper.title }}</a>
         <div class="authors">{% for author in paper.authors %}
-            <div class="author">{{ author }}</div>
+            <div class="author">{{ author | abbreviateName }}</div>
         {% endfor %}</div>
         <div class="notes">{% for note in paper.notes %}
             <div class="note">{{ note }}</div>

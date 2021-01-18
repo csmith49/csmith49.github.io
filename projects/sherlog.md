@@ -11,3 +11,5 @@ keywords:
 ---
 
 Sherlog is a deep, probabilistic logic programming language with semantics derived from existential fragments of Datalog.
+
+Sherlog is an ongoing project with promising preliminary results. Stay tuned for more.
