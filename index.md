@@ -3,10 +3,8 @@ title: Home
 layout: layouts/homepage
 ---
 
-I'm a post-doc in UT Austin's Trishul lab working on problems in the intersection of probabilistic programming, logic, and machine learning.
+I'm an applied scientist at [Durable](durable.ai), where I work on combining traditional program synthesis and verification techniques with modern AI.
 
-Texas A&M → UW Madison | [madPL](https://madpl.cs.wisc.edu) → UT Austin
-
-At UW Madison, I was advised by [Aws Albarghouthi](http://pages.cs.wisc.edu/~aws/). Check out my [thesis](/files/pdfs/thesis.pdf)!
+Texas A&M → UW Madison | [madPL](https://madpl.cs.wisc.edu) → UT Austin | [Trishul](https://trishul.us)
 
 My CV is available upon request.

@@ -7,3 +7,10 @@
   entries:
     - role: POPL AEC
       notes: []
+
+- year: 2022
+  entries:
+    - role: OOPSLA AEC
+      notes: []
+    - role: POPL PC
+      notes: []

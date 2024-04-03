@@ -1,9 +1,6 @@
 - name: home
   url: /
 
-- name: projects
-  url: /projects
-
 - name: papers
   url: /papers
   sub:
