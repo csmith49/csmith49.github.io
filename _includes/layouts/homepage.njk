@@ -1,0 +1,18 @@
+---
+layout: layouts/base
+---
+
+{{ content }}
+
+<h2>Selected Publications </h2>
+
+<ul class="papers">
+    {% for paper in papers %}
+        {% if paper.selected %}
+            <li>{% include "papers/card.njk" %}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+Click <a href="/papers">here</a>
+for a list of all publications.
