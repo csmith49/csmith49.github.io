@@ -17,9 +17,16 @@ module.exports = function (eleventyConfig) {
                 result += splits[i].charAt(0) + ". ";
             }
             else {
-                result += splits[i];   
+                result += splits[i];
             }
         }
         return result;
     });
+
+    return {
+        dir: {
+            // This website is currently being served by Github Pages, which uses the `docs` folder by default.
+            data: "docs"
+        }
+    }
 };

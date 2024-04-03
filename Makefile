@@ -2,7 +2,7 @@
 all: build
 
 build:
-	eleventy --output=docs
+	npx @11ty/eleventy --output=docs
 
 local:
-	eleventy --output=docs --serve
+	npx @11ty/eleventy --serve
