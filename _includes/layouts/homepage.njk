@@ -7,7 +7,7 @@ layout: layouts/base
 <h2>Selected Publications </h2>
 
 <ul class="papers">
-    {% for paper in papers %}
+    {% for paper in collections.papers %}
         {% if paper.selected %}
             <li>{% include "papers/card.njk" %}</li>
         {% endif %}

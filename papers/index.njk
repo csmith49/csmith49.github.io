@@ -6,7 +6,7 @@ layout: layouts/base
 <h2>Publications</h2>
 
 <ul class="papers">
-    {% for paper in papers %}
+    {% for paper in collections.papers %}
         {% if paper.type == "conference" or paper.type == "journal" %}
             <li>{% include "papers/card.njk" %}</li>
         {% endif %}
@@ -15,7 +15,7 @@ layout: layouts/base
 <h2>Workshops</h2>
 
 <ul class="papers">
-    {% for paper in papers %}
+    {% for paper in collections.papers %}
         {% if paper.type == "workshop" %}
             <li>{% include "papers/card.njk" %}</li>
         {% endif %}
