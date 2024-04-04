@@ -1,6 +1,7 @@
 ---
 title: On Synthesis for Differential Privacy
-authors: Calvin Smith
+authors: 
+    - Calvin Smith
 location: SYNT
 year: 2019
 type: workshop
