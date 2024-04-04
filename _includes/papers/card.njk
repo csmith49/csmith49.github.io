@@ -1,12 +1,18 @@
 <div class="paper-card">
-    <div class="location">{% if paper.location %}{{ paper.location }} {% endif %}{{ paper.year }}</div>
+    <div class="location">
+        {% if paper.data.location %}{{ paper.data.location }}
+        {% endif %}{{ paper.data.year }}</div>
     <div class="body">
-        <a class="title" href={{ paper.link }}>{{ paper.title }}</a>
-        <div class="authors">{% for author in paper.authors %}
-            <div class="author">{{ author | abbreviateName }}</div>
-        {% endfor %}</div>
-        <div class="notes">{% for note in paper.notes %}
-            <div class="note">{{ note }}</div>
-        {% endfor %}</div>
+        <a class="title" href={{ paper.data.link }}>{{ paper.data.title }}</a>
+        <div class="authors">
+            {% for author in paper.data.authors %}
+                <div class="author">{{ author | abbreviateName }}</div>
+            {% endfor %}
+        </div>
+        <div class="notes">
+            {% for note in paper.data.notes %}
+                <div class="note">{{ note }}</div>
+            {% endfor %}
+        </div>
     </div>
 </div>

@@ -2,19 +2,24 @@
 layout: layouts/base
 ---
 
-<h1>{{ paper.title }}</h1>
+<h1>{{ paper.data.title }}</h1>
 
-<ul>{% for author in paper.authors %}
-    <li>{{ author }}</li>
-{% endfor %}</ul>
+<ul>
+    {% for author in paper.data.authors %}
+        <li>{{ author }}</li>
+    {% endfor %}
+</ul>
 
-<h2>{{ paper.location }} - {{ paper.year }}</h2>
+<h2>{{ paper.data.location }} - {{ paper.data.year }}</h2>
 
-<ul>{% for note in paper.notes %}
-    <li>{{ note }}</li>
-{% endfor %}</ul>
+<ul>
+    {% for note in paper.data.notes %}
+        <li>{{ note }}</li>
+    {% endfor %}
+</ul>
 
-<ul>{% for keyword in paper.keywords %}
-    <li>{{ keyword }}</li>
-{% endfor %}</ul>
-
+<ul>
+    {% for keyword in paper.data.keywords %}
+        <li>{{ keyword }}</li>
+    {% endfor %}
+</ul>

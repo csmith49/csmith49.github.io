@@ -8,7 +8,7 @@ layout: layouts/base
 
 <ul class="papers">
     {% for paper in collections.papers %}
-        {% if paper.selected %}
+        {% if paper.data.selected %}
             <li>{% include "papers/card.njk" %}</li>
         {% endif %}
     {% endfor %}
