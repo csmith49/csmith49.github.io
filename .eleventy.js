@@ -29,6 +29,7 @@ module.exports = function (eleventyConfig) {
         dir: {
             // This website is currently being served by Github Pages, which uses the `docs` folder by default.
             output: "docs"
-        }
+        },
+        markdownTemplateEngine: "njk"
     }
 };
