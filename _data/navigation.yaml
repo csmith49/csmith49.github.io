@@ -1,15 +1,8 @@
 - name: home
   url: /
 
-- name: papers
+- name: academia
   url: /papers
-  sub:
-    - name: refereed
-      url: /papers#refereed
-    - name: thesis
-      url: /papers#thesis
-    - name: workshop
-      url: /papers#workshop
 
-- name: blog
-  url: /posts
+- name: projects
+  url: /projects

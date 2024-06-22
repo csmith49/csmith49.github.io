@@ -7,8 +7,8 @@ module.exports = function (eleventyConfig) {
     );
 
     // make sure images and css get to pass through
-    eleventyConfig.addPassthroughCopy("files/images");
     eleventyConfig.addPassthroughCopy("css");
+    eleventyConfig.addPassthroughCopy("files/images");
     eleventyConfig.addPassthroughCopy("files/pdfs");
 
     eleventyConfig.addFilter("abbreviateName", function (name) {

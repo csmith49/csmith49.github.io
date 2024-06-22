@@ -1,9 +1,27 @@
 <div class="navigation">
     <div class="name">{{ about.name }}</div>
     <div class="email">{{ about.email }}</div>
-    <div class="role">{{ about.role }}</div>
-    <div class="affiliation">{{ about.affiliation }}</div>
-    <nav class="nav-items">{%- for entry in navigation %}
-        <a class="nav-item" href={{ entry.url }}>{{ entry.name }}</a>
-    {% endfor %}</nav>
+    {% if about.role %}
+        <div class="role">{{ about.role }}</div>
+    {% endif %}
+    {% if about.affiliation %}
+        <div class="affiliation">{{ about.affiliation }}</div>
+    {% endif %}
+    <div class="badges">
+        {% if about.github %}
+            <a class="badge" href={{ about.github }}>
+                <i class="fa fa-github-square"></i>
+            </a>
+        {% endif %}
+        {% if about.linkedin %}
+            <a class="badge" href={{ about.linkedin }}>
+                <i class="fa fa-linkedin-square"></i>
+            </a>
+        {% endif %}
+    </div>
+    <nav class="nav-items">
+        {%- for entry in navigation %}
+            <a class="nav-item" href={{ entry.url }}>{{ entry.name }}</a>
+        {% endfor %}
+    </nav>
 </div>

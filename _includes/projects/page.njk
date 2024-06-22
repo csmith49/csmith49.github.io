@@ -2,8 +2,4 @@
 layout: layouts/base
 ---
 
-<ul class="keywords">{%- for keyword in keywords -%}
-    <li class="keyword">{{ keyword }}</li>
-{% endfor %}</ul>
-
-{{ content }}
+{{ content | safe }}
