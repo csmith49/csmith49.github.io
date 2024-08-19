@@ -15,14 +15,14 @@ And like approximately every single one of those 50 million people, I was determ
 
 The day was overcast, but the partial eclipse was occasionally bright enough to be viewed through the cloud cover. When it wasn't visible to the naked eye my camera acted as an acceptable telescope and let us keep tabs on the moon's progress. Five minutes before totality the clouds broke entirely and we had clear skies for the entire four minutes and eighteen seconds.
 
-![Total eclipse](/files/images/eclipse-full.jpg)
+![Total eclipse](/projects/eclipse_2024/eclipse-full.jpg)
 
 This picture -- with a strong corona, a Baily's Bead, and a hint of solar prominence (at bottom) -- became my favorite of the day. I even went to the trouble of converting the digital image to film so I could make some darkroom prints for everyone present.
 
-![Eclipse with Baily's Bead visible in lower-right](/files/images/eclipse-bead-small.jpg)
+![Eclipse with Baily's Bead visible in lower-right](/projects/eclipse_2024/eclipse-bead-small.jpg)
 
 Finally, this is the last post-totality picture before I replaced the solar filter. With the lessened corona the structure of the solar prominences become clear.
 
-![Partial eclipse with solar prominences visible at bottom and right](/files/images/eclipse-bead-large.jpg)
+![Partial eclipse with solar prominences visible at bottom and right](/projects/eclipse_2024/eclipse-bead-large.jpg)
 
 All of these images were captured using a 70-300mm telephoto lens on a mirrorless camera with an APS-C sensor, giving an effective focal length of 450mm (although they've also been slightly cropped in post).

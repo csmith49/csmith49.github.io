@@ -1,0 +1,101 @@
+<html>
+    <head>
+    <meta name="author" content="Calvin Smith">
+    <meta name="description" content="Personal website of Calvin Smith">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.29.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.25.0"></script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Calvin Smith - Affective Dimensions in Word Embeddings</title>
+</head>
+    <body>
+        <div class="navigation">
+    <div class="name">Calvin Smith</div>
+    <div class="email">email (at) cjsmith (dot) io</div>
+    
+        <div class="role">Computer Scientist</div>
+    
+    
+    <div class="badges">
+        
+            <a class="badge" href=https://github.com/csmith49>
+                <i class="fa fa-github-square"></i>
+            </a>
+        
+        
+            <a class="badge" href=https://www.linkedin.com/in/calvin-smith-530112244/>
+                <i class="fa fa-linkedin-square"></i>
+            </a>
+        
+    </div>
+    <nav class="nav-items">
+            <a class="nav-item" href=/>home</a>
+        
+            <a class="nav-item" href=/papers>academia</a>
+        
+            <a class="nav-item" href=/projects>projects</a>
+        
+    </nav>
+</div>
+        <div class="content">
+            <h1>Affective Dimensions in Word Embeddings</h1>
+            
+<p>In 1980, psychologist John Russell asked 36 university students to categorize how 28 particular affects -- a term used by psychologists encompassing feelings, moods, and emotions -- made them feel (<a href="https://www.researchgate.net/publication/235361517_A_Circumplex_Model_of_Affect">Russel 1980</a>). In analyzing the results he found that the responses were consistent with the theoretical <em>circumplex model of affect</em>:</p>
+<p><img src="/projects/circumplex/circumplex.png" alt="Figure 2 from Russell's 1980 paper &quot;A Circumplex Model of Affect&quot;"></p>
+<p>Previous studies told Russell that the axes of the circumplex captured a significant portion of how people distinguished between affects. The horizontal axis is <strong>valence</strong>, which describes if an affective experience is positive or negative. The vertical axis is <strong>arousal</strong>: here, that's a subjective measure of the energizing or pacifying effect of an affect, but in other studies it's measured as the relative activity of the sympathetic nervous system.</p>
+<p>What's amazing about this model is that it's been independently verified and seems to hold across languages and cultures (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2367156/">Posner et al. 2005</a>, <a href="https://web.archive.org/web/20170809041458id_/https://www2.bc.edu/james-russell/publications/pancultural%20aspects.pdf">Russel 1983</a>, <a href="https://www.tandfonline.com/doi/full/10.1080/1612197X.2015.1039693">Loizou and Karageorghis 2015</a>). So while all models are wrong, <em>this</em> model at least seems to be consistent with how the average person conceptualizes emotional states. And that's true even if they're not consciously aware of the fact that they have a conceptualization at all!</p>
+<p>Which makes me wonder: if valence and arousal are so universal, they must be implicit in our writing. Have large language models (LLMs) like ChatGPT picked up on the pattern? Not to say that ChatGPT experiences affective states (you can't understand the experience of arousal without a sympathetic nervous system), but the underlying model might have a latent representation consistent with ours.</p>
+<p>Let's find out.</p>
+<p>Before we do, I want to clarify the point of this experiment. First, I'm not interested in what ChatGPT has to <em>say</em> about affective states: if you ask you'll get definitions and assurances that the model doesn't &quot;feel&quot;, not trustworthy explanations about what happens under the hood.</p>
+<p>Second, there are <em>absolutely</em> emotional patterns in natural language to be found. Computer-aided analysis of text goes back to the 60s (<a href="https://mitpress.mit.edu/9780262690119/the-general-inquirer/">Stone et al. 1966</a>), and the early 2000s saw many similar techniques used to predict the emotional content of text (<a href="https://arxiv.org/pdf/cs/0212032">Turney 2002</a>, <a href="https://www.cs.cornell.edu/home/llee/papers/sentiment.pdf">Pang et al. 2002</a>, <a href="https://aclanthology.org/N07-1038.pdf">Snyder and Barzilay 2007</a>).</p>
+<p>But modern LLMs aren't trained on those patterns. They're trained to predict the next word in a sequence, and later fine-tuned for things like &quot;being helpful&quot;.</p>
+<p><strong>What I want to know</strong> is if LLMs, while being trained to predict something else entirely, have somehow encoded valence and arousal in their latent states.</p>
+<p>To see if that's the case we'll look at <em>word embeddings</em>, which map bits of text to the state that LLMs use to compute what to say next. Embedding models are often trained jointly with LLMs, but word embeddings themselves pre-date the current wave of LLM-based AI research by several decades.</p>
+<p>The <code>word2vec</code> model (<a href="https://arxiv.org/pdf/1301.3781">Mikolov et al. 2013</a>) made headlines when it was published in 2013 because it let us use <em>math</em> on words to do things like make analogies. For instance, the analogy <em>Einstein : scientist :: Messi : ?</em> could be solved by calculating:</p>
+<pre><code class="language-(txt)">    scientist - Einstein + Messi
+</code></pre>
+<p>and finding the nearest vector -- in this case, <code>midfielder</code>.</p>
+<p>For this experiment I'll use OpenAI's <code>text-embedding-3-small</code> model to embed Russell's 28 affects; it's cheap and fast and has seen orders of magnitude more data than <code>word2vec</code>. We'll see if there's any relation with the circumplex model of affect, and if there is we'll train a simple model to predict the valence and arousal of <em>other</em> words.</p>
+<p>One problem: Russell only includes precise measurements for a handful of the 28 affects. To get the rest, I imported the figure into some photo-editing software and measure the angles myself. My results matched those Russell reports to within a degree -- perhaps surprising, considering the imprecision (or maybe it's just <em>character</em>) of what is clearly a hand-drawn figure.</p>
+<p>Here's the cleaned-up version of the circumplex. Hover over any of the data points to see more information.</p>
+<div class="vega-lite"><div id="russells"></div></div><script>var src = fetch("/projects/circumplex/russells.json").then(response => response.json()).then(json => vegaEmbed("#russells", json));</script>
+<h2>Graphical Gut Check</h2>
+<p>Our first step is to look at the data and see if word embeddings have anything to do with the circumplex. And if we apply the lesson of Anscombe's quartet the best way to look at the data is to <em>look</em> at it.</p>
+<p>But word embeddings are way too high-dimensional to graph. Even using our small embedding model converts each word to a vector with 1,536 components. If your screen is anything like mine, you've only got two meaningful dimensions to work with, so we need a way to distill those 1,000+ dimensions down to two without losing too much information. One way to do that is <em>manifold learning</em>.</p>
+<p>A manifold is anything that &quot;looks like&quot; Euclidean space. If we can find a two-dimensional manifold embedded in our 1,536-dimensional space that touches all our data, we can throw away those other dimensions and flatten the manifold into a two-dimensional graph.</p>
+<p>We'll use a technique called t-SNE from <a href="https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf">van der Maaten and Hinton 2008</a> to get a manifold that we can graph. t-SNE does what it can to keep nearby vectors close in the two-dimensional projection. Although there's no meaningful interpretation to the precise distances, the distance preservation helps preserve structure. If you want to build more intuition on how to interpret the results of t-SNE see the examples at <a href="https://distill.pub/2016/misread-tsne/">Wattenberg et al. 2016</a>.</p>
+<div class="vega-lite"><div id="tsne"></div></div><script>var src = fetch("/projects/circumplex/tsne.json").then(response => response.json()).then(json => vegaEmbed("#tsne", json));</script>
+<p>Because we care about the affective dimensions, I've marked every point with an arrow whose angle matches the emotion's position in the circumplex. It looks like the arrows define a locally-smooth field, with a few jumps. That's a good sign for us -- the t-SNE algorithm doesn't know anything about valence or arousal, so this structure is a strong indication that the embeddings carry some amount of information about the affective dimensions.</p>
+<h2>Predicting Affective Dimensions</h2>
+<p>Now that we're convinced the embeddings contain some amount of the signal we want, the next step is to build a model to extract it. The main roadblock we'll have to work around is our limited amount of data (remember, we only have 28 data points to learn from) and the huge amount of information available in each embedding. Even a simple linear model is likely to overfit to our dataset, which won't serve us well when we want to get the valence and arousal of other concepts.</p>
+<p>Dimensionality reduction won't help us much. Our t-SNE reduction to two dimensions can't handle new data points (we'd have to re-learn the manifold so that it also includes the new data). And embedding models take good advantage of all available dimensions, so tools like principle component analysis (PCA) won't reduce the dimensionality without throwing away a huge amount of information.</p>
+<p>Instead we'll fight over-fitting with <em>regularization</em>: we'll add constraints to a simple linear model so that it isn't flexible enough to overfit. For linear models, the standard regularization strategies are Lasso and Ridge. Since Lasso regularization tries to make as many parameters 0 as possible, we shouldn't expect it to take good advantage of how embeddings &quot;spread out&quot; their information, so that leaves Ridge.</p>
+<p>I trained independent Ridge models to predict valence and arousal from word embeddings. The models fit well but not perfectly (valence R squared was 0.93, arousal R squared was 0.89), and I've plotted the predicted valence/arousal of Russell's 28 affects below. Click any of the data points to see where the affect was originally on the circumplex.</p>
+<div class="vega-lite"><div id="ridge"></div></div><script>var src = fetch("/projects/circumplex/ridge.json").then(response => response.json()).then(json => vegaEmbed("#ridge", json));</script>
+<p>Since the two models are independent and we're not <em>trying</em> to constrain predictions to be on the perimeter, most affects are inside the circle. This might be a mistake! But I don't know how significant it is: the circumplex model assumes valence and arousal are correlated, but the relation is variable (<a href="https://pubmed.ncbi.nlm.nih.gov/23231533/">Kuppens et al. 2013</a>) and might depend on cultural contexts (<a href="https://pubmed.ncbi.nlm.nih.gov/35446055/">Yik et al. 2023</a>).</p>
+<h2>Out of Domain</h2>
+<p>Normally, to test the quality of a model we would evaluate its performance on a set of data it hasn't seen. But as I only have quantitative data on the 28 affects from Russell's 1980 paper we'll have to rely on a qualitative analysis. Here's what happens when we apply the two Ridge models to a new set of affects:</p>
+<div class="vega-lite"><div id="hoffman"></div></div><script>var src = fetch("/projects/circumplex/hoffman.json").then(response => response.json()).then(json => vegaEmbed("#hoffman", json));</script>
+<p>These affects are given in <a href="https://www.hoffmaninstitute.org/wp-content/uploads/Practices-FeelingsSensations.pdf">a worksheet</a> from the Hoffman Institute. I can't speak to the efficacy of the Hoffman process, but the categories and nuance of individual affects give us multiple scales by which to explore the data. Click any of the categories in the legend to filter the dataset.</p>
+<p>There are no objective measurements of correctness we can apply here. My sense is that the categories are placed roughly correctly within the circumplex, but it's easy to find pairs whose relative position is hard to justify. I encourage you to explore the dataset and see the quality of the relative valence and arousal values for yourself.</p>
+<h2>Takeaways</h2>
+<p>Our analysis is limited by a lack of data, but there is clearly some signal about the affective dimensions in embeddings from OpenAI's <code>text-embedding-3-small</code> model. The R squared scores and casual analysis of the Hoffman Institute affects suggest valence is a stronger signal than arousal. That may just be noise, but it might also be indicative of some structure in English where synonyms have less variable valence than arousal. Without more data we can't readily confirm that hypothesis.</p>
+<p>We might also have more success with different embedding strategies. For this experiment I embedded affect words directly and without any other context, but we might also embed a definition or example usage or bit of prose that captures what it means to <em>feel</em> that affect. And if we don't limit ourselves to text and use multi-modal embeddings we might get even stronger signals: <a href="https://www.pnas.org/doi/10.1073/pnas.1702247114">Cowen and Keltner 2017</a> found a high-dimensional emotional structure in self-reported responses to videos (you can explore the data <a href="https://s3-us-west-1.amazonaws.com/emogifs/map.html#modal">here</a>).</p>
+<p>Finally, if we wanted to move beyond embeddings and had compute to spare, we could also apply modern &quot;mind mapping&quot; techniques that look at neuron activation patterns and attempt to map them to concepts (<a href="https://openai.com/index/extracting-concepts-from-gpt-4/">OpenAI 2024</a>, <a href="https://www.anthropic.com/news/mapping-mind-language-model">Anthropic 2024</a>). It's likely that some of the activation patterns correspond to our affective dimensions.</p>
+<p>If you want to run these experiments for yourself, the source is available <a href="https://github.com/csmith49/experiments/tree/e231189ff0d22353a1b55f4445c206c3b9adb909/circumplex">here</a>.</p>
+
+
+        </div>
+        <footer class="footer">
+    <div class="footer-item tooling">Built using <a href="https://www.11ty.dev">11ty</a>
+    </div>
+    <div class="footer-item copyright">© Calvin Smith | All Rights Reserved</div>
+</footer>
+    </body>
+</html>

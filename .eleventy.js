@@ -11,6 +11,14 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("files/images");
     eleventyConfig.addPassthroughCopy("files/pdfs");
 
+    eleventyConfig.addPassthroughCopy("projects/**/*.png");
+    eleventyConfig.addPassthroughCopy("projects/**/*.jpg");
+    eleventyConfig.addPassthroughCopy("projects/**/*.json");
+
+    eleventyConfig.addShortcode("vega", function(path, id) {
+        return `<div class="vega-lite"><div id="${id}"></div></div><script>var src = fetch("${path}").then(response => response.json()).then(json => vegaEmbed("#${id}", json));</script>`
+    });
+
     eleventyConfig.addFilter("abbreviateName", function (name) {
         var splits = name.trim().split(" ");
         result = "";

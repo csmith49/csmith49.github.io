@@ -183,6 +183,17 @@ img {
     height: auto;
 }
 
+.vega-embed {
+    padding-right: 0px !important;
+}
+.vega-lite {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+}
+
 /* navigation */
 .navigation .name {
     font-size: 1.953em;
